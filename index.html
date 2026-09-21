@@ -3,75 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#07100b">
-<title>PROTOCOLO ÔMEGA — Sinal Fantasma</title>
+<meta name="theme-color" content="#020805">
+<meta name="color-scheme" content="dark">
+<title>PROTOCOLO ÔMEGA // SINAL 01</title>
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;min-height:100%;background:#07100b}
-body{font-family:"Courier New",monospace;color:#e8fff1;-webkit-text-size-adjust:100%;}
-.page{width:100%;min-height:100vh;padding:22px 12px 28px;background:linear-gradient(180deg,#07100b 0%,#030705 100%)}
-.container{width:100%;max-width:850px;margin:0 auto;position:relative;z-index:2}
-.topline{height:2px;background:#39ff88;box-shadow:0 0 12px #39ff88;margin-bottom:25px}
-.header{display:flex;align-items:center;gap:12px;padding-bottom:18px;border-bottom:1px solid rgba(57,255,136,.3)}
-.dot{width:9px;height:9px;min-width:9px;border-radius:50%;background:#39ff88;box-shadow:0 0 12px #39ff88}
-.small{margin:0 0 6px;color:#39ff88;font-size:10px;letter-spacing:2px}
-h1{margin:0;color:#f0fff6;font-size:28px;line-height:1.1;letter-spacing:1px}
-.classification{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:13px 0;color:#789383;font-size:10px;letter-spacing:1px}
-.purple{color:#bd78ff}
-.box{margin-top:10px;padding:16px;border:1px solid rgba(57,255,136,.25);background:#0b1510}
-.label{margin:0 0 13px;color:#39ff88;font-size:10px;letter-spacing:1.5px}
-.status{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.status span{display:block;color:#718878;font-size:9px;margin-bottom:5px;letter-spacing:1px}
-.status strong{display:block;color:#b9ffd1;font-size:12px;font-weight:normal}
-.warning{display:flex;gap:12px;border-color:rgba(255,204,85,.35)}
-.warning-icon{color:#ffcc55;font-size:22px;line-height:1}
-.warning strong{color:#ffcc55;font-size:11px;letter-spacing:1px}
-p{margin:6px 0 0;color:#b8c9be;font-size:13px;line-height:1.55}
-.highlight{color:#9affc1!important}
-.transmission{border-color:rgba(189,120,255,.35)}
-.player{padding:10px;background:#020402;border:1px solid rgba(189,120,255,.2)}
-audio{display:block;width:100%;height:42px}
-.download{display:block;margin-top:10px;padding:13px 10px;border:1px solid rgba(57,255,136,.3);color:#9affc1;text-decoration:none;text-align:center;font-size:10px;letter-spacing:.6px}
-.download:active{background:rgba(57,255,136,.1)}
-.code{margin-top:14px!important;padding:11px;border-left:2px solid #39ff88;background:rgba(57,255,136,.04);color:#9affc1!important;font-size:10px!important;overflow-wrap:anywhere}
-footer{display:flex;justify-content:space-between;gap:10px;margin-top:20px;padding-top:14px;border-top:1px solid rgba(57,255,136,.2);color:#52665a;font-size:8px;letter-spacing:.7px}
-@media(max-width:600px){.page{padding:16px 10px 24px}.topline{margin-bottom:20px}.header{gap:9px;padding-bottom:15px}h1{font-size:23px}.small{font-size:9px;letter-spacing:1.2px}.classification{font-size:8px;padding:11px 0}.box{padding:13px;margin-top:8px}.status{grid-template-columns:1fr;gap:11px}.status strong{font-size:11px}.warning{padding:13px}.warning-icon{font-size:19px}p{font-size:12px}.download{font-size:9px;padding:12px 6px}footer{flex-direction:column;gap:4px}}
+html,body{margin:0;padding:0;min-height:100%;background:#020805;color:#d9eee2}
+body{font-family:"Courier New",Courier,monospace;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(92,255,164,.035) 0,rgba(92,255,164,.035) 1px,transparent 1px,transparent 4px);z-index:10}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.55) 100%);z-index:11}
+.page{width:min(900px,calc(100% - 40px));margin:0 auto;padding:48px 0 42px;position:relative;z-index:2}
+.header{border-bottom:1px solid #17663d;padding-bottom:22px;margin-bottom:24px}
+.system{color:#43e98a;font-size:13px;letter-spacing:3px;margin-bottom:10px;text-shadow:0 0 8px rgba(67,233,138,.45)}
+.title-row{display:flex;align-items:center;gap:18px}
+.status-dot{width:14px;height:14px;border-radius:50%;background:#39ff88;box-shadow:0 0 8px #39ff88,0 0 20px rgba(57,255,136,.45);flex:none}
+h1{font-size:34px;line-height:1.1;font-weight:400;letter-spacing:2px;margin:0;color:#e7f6ed;text-shadow:0 0 10px rgba(210,255,228,.15)}
+.signal{font-size:15px;letter-spacing:1.5px;margin-top:18px;color:#d9eee2}
+.section-label{font-size:13px;color:#49e78c;letter-spacing:3px;margin:7px 0 18px}
+.panel{border:1px solid #185c39;background:rgba(4,17,11,.72);padding:22px 24px;margin-bottom:18px;box-shadow:inset 0 0 25px rgba(30,255,130,.025)}
+.data{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:15px;line-height:1.35}
+.data .value{font-weight:bold;color:#f0f7f2}
+.warning{border-left:3px solid #40e982;padding:3px 0 3px 15px;margin:21px 0;color:#dceee3}
+.warning strong{display:block;color:#fff;font-size:17px;margin-bottom:8px}
+.message{font-size:15px;line-height:1.65;margin:0}
+.clue{color:#4bea8d;font-size:15px;line-height:1.55;margin:20px 0 0}
+.transmission{margin-top:26px}
+.player-wrap{border:1px solid #247a4b;background:#06150d;padding:15px;margin-top:12px;box-shadow:0 0 20px rgba(31,255,125,.06)}
+a.download{display:flex;align-items:center;justify-content:center;min-height:48px;margin-top:12px;padding:12px 15px;border:1px solid #32d978;background:#06150d;color:#50f097;text-decoration:none;font-size:13px;letter-spacing:1px;text-align:center;transition:.2s;box-shadow:0 0 12px rgba(50,217,120,.08)}
+a.download:hover,a.download:active{background:#0a2617;box-shadow:0 0 18px rgba(50,217,120,.2)}
+.instruction{border-top:1px solid #164e32;margin-top:24px;padding-top:20px}
+.flow{border:1px dashed #286b47;padding:14px 15px;margin-top:18px;color:#cfe5d8;font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+.footer{color:#3fbc74;font-size:12px;letter-spacing:1.2px;margin-top:26px;padding-top:17px;border-top:1px solid #123b27}
+@media(max-width:600px){
+ .page{width:100%;padding:26px 17px 30px}
+ .header{padding-bottom:17px;margin-bottom:19px}
+ .system{font-size:10px;letter-spacing:2.3px;margin-left:1px}
+ .title-row{gap:12px}
+ .status-dot{width:11px;height:11px}
+ h1{font-size:25px;letter-spacing:1.5px}
+ .signal{font-size:12px;letter-spacing:.7px;line-height:1.5;margin-top:15px}
+ .section-label{font-size:10px;letter-spacing:2px;margin-bottom:13px}
+ .panel{padding:17px 15px;margin-bottom:14px}
+ .data{grid-template-columns:1fr;gap:3px;font-size:14px}
+ .data .value{margin-bottom:7px}
+ .warning{margin:17px 0;padding-left:12px}
+ .warning strong{font-size:15px;margin-bottom:7px}
+ .message,.clue{font-size:14px;line-height:1.55}
+ .clue{margin-top:17px}
+ .transmission{margin-top:21px}
+ .player-wrap{padding:11px 8px;margin-top:10px}
+ audio{width:100%;height:44px}
+ a.download{font-size:11px;letter-spacing:.6px;min-height:46px;margin-top:10px;padding:10px 8px}
+ .instruction{margin-top:19px;padding-top:17px}
+ .flow{font-size:12px;padding:11px 10px;margin-top:14px}
+ .footer{font-size:10px;margin-top:20px}
+}
+@media(min-width:601px){audio{width:100%;height:44px}}
 </style>
 </head>
 <body>
-<div class="page">
-<main class="container">
-<div class="topline"></div>
+<main class="page">
 <header class="header">
-<div class="dot"></div>
-<div><p class="small">GTHC // NEXUS</p><h1>PROTOCOLO ÔMEGA</h1></div>
+  <div class="system">GTHC // NEXUS</div>
+  <div class="title-row"><span class="status-dot"></span><h1>PROTOCOLO ÔMEGA</h1></div>
+  <div class="signal">TRANSMISSÃO // SINAL 01 // SINAL FANTASMA</div>
 </header>
-<section class="classification"><span>TRANSMISSÃO // SINAL 01</span><span class="purple">SINAL FANTASMA</span></section>
-<section class="box">
-<div class="label">STATUS DO ARQUIVO</div>
-<div class="status">
-<div><span>ESTADO</span><strong>◈ CORROMPIDO</strong></div>
-<div><span>ORIGEM</span><strong>DESCONHECIDA</strong></div>
-<div><span>INTEGRIDADE</span><strong>00.7%</strong></div>
-</div>
+
+<section class="panel">
+  <div class="section-label">STATUS DO ARQUIVO</div>
+  <div class="data">
+    <div>ESTADO</div><div class="value">◇ CORROMPIDO</div>
+    <div>ORIGEM</div><div class="value">DESCONHECIDA</div>
+    <div>INTEGRIDADE</div><div class="value">00.7%</div>
+  </div>
+
+  <div class="warning">
+    <strong>⚠ ATENÇÃO</strong>
+    <p class="message">O arquivo contém uma transmissão não identificada.</p>
+  </div>
+
+  <p class="clue">Não escute apenas; observe o som.</p>
+
+  <div class="transmission">
+    <div class="section-label">// TRANSMISSÃO RECUPERADA</div>
+    <div class="player-wrap">
+      <audio controls preload="metadata">
+        <source src="./transmissao_01_preview.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+      </audio>
+    </div>
+    <a class="download" href="./transmissao_01.wav" download>↓ BAIXAR ARQUIVO ORIGINAL (.WAV)</a>
+  </div>
 </section>
-<section class="box warning">
-<div class="warning-icon">⚠</div>
-<div><strong>ATENÇÃO</strong><p>O arquivo contém uma transmissão não identificada.</p><p class="highlight">Não escute apenas; observe o som.</p></div>
+
+<section class="panel instruction">
+  <div class="section-label">// INSTRUÇÃO</div>
+  <p class="message">O sinal foi preservado em sua forma original.</p>
+  <p class="message" style="margin-top:15px">Use um visualizador de espectrograma para analisar a transmissão.</p>
+  <div class="flow">[ AUDIO INPUT ] &nbsp;→&nbsp; [ SPECTROGRAM ] &nbsp;→&nbsp; [ INFORMATION ]</div>
 </section>
-<section class="box transmission">
-<div class="label">// TRANSMISSÃO RECUPERADA</div>
-<div class="player"><audio controls preload="metadata"><source src="./transmissao_01_preview.mp3" type="audio/mpeg">Seu navegador não suporta reprodução de áudio.</audio></div>
-<a class="download" href="./transmissao_01.wav" download>↓ &nbsp; BAIXAR ARQUIVO ORIGINAL (.WAV)</a>
-</section>
-<section class="box">
-<div class="label">// INSTRUÇÃO</div>
-<p>O sinal foi preservado em sua forma original.</p>
-<p>Use um visualizador de espectrograma para analisar a transmissão.</p>
-<p class="code">[ AUDIO INPUT ] → [ SPECTROGRAM ] → [ INFORMATION ]</p>
-</section>
-<footer><span>GTHC // ARQUIVO ÔMEGA</span><span>SESSION: 01</span></footer>
+
+<footer class="footer">GTHC // ARQUIVO ÔMEGA // SESSION: 01</footer>
 </main>
-</div>
 </body>
 </html>
