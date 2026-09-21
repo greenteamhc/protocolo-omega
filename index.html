@@ -1,95 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#050807">
-<title>PROTOCOLO ÔMEGA // SINAL 01</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050807">
+  <title>PROTOCOLO ÔMEGA — Sinal Fantasma</title>
+  <link rel="stylesheet" href="./style.css?v=20260921">
+</head>
+<body>
+  <main class="terminal">
+    <div class="scanlines"></div>
 
-<style>
-:root {
-    --bg: #050807;
-    --panel: #09100c;
-    --green: #1eff78;
-    --green-soft: #8fbda0;
-    --text: #d8ffe5;
-    --muted: #668a73;
-    --red: #ff3355;
-    --border: rgba(30,255,120,.38);
-}
+    <header class="header">
+      <div class="status-dot"></div>
+      <div>
+        <p class="system-label">GTHC // NEXUS</p>
+        <h1>PROTOCOLO ÔMEGA</h1>
+      </div>
+    </header>
 
-* { box-sizing: border-box; }
+    <section class="classification">
+      <span>TRANSMISSÃO // SINAL 01</span>
+      <span class="classification-tag">SINAL FANTASMA</span>
+    </section>
 
-html { min-height: 100%; }
+    <section class="panel">
+      <div class="panel-title">STATUS DO ARQUIVO</div>
+      <div class="status-grid">
+        <div>
+          <span>ESTADO</span>
+          <strong>◈ CORROMPIDO</strong>
+        </div>
+        <div>
+          <span>ORIGEM</span>
+          <strong>DESCONHECIDA</strong>
+        </div>
+        <div>
+          <span>INTEGRIDADE</span>
+          <strong>00.7%</strong>
+        </div>
+      </div>
+    </section>
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at 50% 15%, rgba(30,255,120,.08), transparent 38%),
-        var(--bg);
-    color: var(--text);
-    font-family: "Courier New", monospace;
-    padding: 18px;
-    overflow-x: hidden;
-}
+    <section class="warning">
+      <div class="warning-icon">⚠</div>
+      <div>
+        <strong>ATENÇÃO</strong>
+        <p>O arquivo contém uma transmissão não identificada.</p>
+        <p class="highlight">Não escute apenas; observe o som.</p>
+      </div>
+    </section>
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 99;
-    opacity: .45;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(30,255,120,.025) 0,
-        rgba(30,255,120,.025) 1px,
-        transparent 1px,
-        transparent 4px
-    );
-}
+    <section class="transmission">
+      <div class="section-label">// TRANSMISSÃO RECUPERADA</div>
 
-.page {
-    width: min(100%, 760px);
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
+      <div class="player-box">
+        <audio controls preload="metadata">
+          <source src="./transmissao_01_preview.mp3" type="audio/mpeg">
+          Seu navegador não suporta reprodução de áudio.
+        </audio>
+      </div>
 
-.terminal {
-    background: rgba(5,10,7,.96);
-    border: 1px solid var(--green);
-    box-shadow:
-        0 0 28px rgba(30,255,120,.12),
-        inset 0 0 35px rgba(30,255,120,.025);
-    padding: clamp(18px, 5vw, 36px);
-}
+      <a class="download" href="./transmissao_01.wav" download>
+        <span>↓</span> BAIXAR ARQUIVO ORIGINAL (.WAV)
+      </a>
+    </section>
 
-.header {
-    padding-bottom: 22px;
-    border-bottom: 1px solid var(--border);
-}
+    <section class="instruction">
+      <div class="section-label">// INSTRUÇÃO</div>
+      <p>O sinal foi preservado em sua forma original.</p>
+      <p>Use um visualizador de espectrograma para analisar a transmissão.</p>
+      <p class="code">[ AUDIO INPUT ] → [ SPECTROGRAM ] → [ INFORMATION ]</p>
+    </section>
 
-.classification {
-    color: var(--red);
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    margin-bottom: 10px;
-}
-
-h1 {
-    color: var(--green);
-    font-size: clamp(22px, 6vw, 32px);
-    line-height: 1.15;
-    letter-spacing: clamp(1px, .7vw, 3px);
-    margin: 0 0 10px;
-    text-shadow: 0 0 10px rgba(30,255,120,.45);
-}
-
-.subtitle {
-    color: var(--green-soft);
-    font-size: clamp(10px, 2.7vw, 13px);
-    line-height: 1.5;
-    letter-spacing: .7px;
-}
+    <footer>
+      <span>GTHC // ARQUIVO ÔMEGA</span>
+      <span>SESSION: 01</span>
+    </footer>
+  </main>
+</body>
+</html>
