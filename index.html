@@ -3,91 +3,588 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PROTOCOLO ÔMEGA // TRANSMISSÃO 01</title>
+    <title>PROTOCOLO ÔMEGA // SINAL 01</title>
 
     <style>
-        body {
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            background: #080b0a;
-            color: #d9ffe9;
-            font-family: monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            padding: 0;
         }
 
-        .terminal {
-            width: 90%;
-            max-width: 650px;
-            border: 1px solid #3aff88;
-            padding: 30px;
-            box-shadow: 0 0 25px rgba(58, 255, 136, 0.15);
+        body {
+            background: #050807;
+            color: #d8ffe5;
+            font-family: "Courier New", monospace;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
         }
+
+        /* LINHAS DE SCAN */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background:
+                repeating-linear-gradient(
+                    to bottom,
+                    rgba(0, 255, 100, 0.025) 0px,
+                    rgba(0, 255, 100, 0.025) 1px,
+                    transparent 1px,
+                    transparent 4px
+                );
+
+            pointer-events: none;
+            z-index: 10;
+        }
+
+
+        /* EFEITO DE BRILHO */
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(0, 255, 100, 0.08),
+                    transparent 65%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .container {
+            width: 100%;
+            max-width: 760px;
+
+            border: 1px solid #1eff78;
+
+            background: rgba(3, 8, 6, 0.96);
+
+            box-shadow:
+                0 0 25px rgba(0, 255, 100, 0.15),
+                inset 0 0 30px rgba(0, 255, 100, 0.03);
+
+            padding: 35px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* CABEÇALHO */
+
+        .header {
+            border-bottom: 1px solid #1eff78;
+
+            padding-bottom: 20px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .classification {
+            color: #ff3355;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
 
         h1 {
-            color: #3aff88;
-            font-size: 24px;
-            margin-bottom: 5px;
+            color: #1eff78;
+
+            font-size: 27px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 10px;
+
+            text-shadow:
+                0 0 8px rgba(30, 255, 120, 0.6);
         }
 
-        .warning {
-            color: #aaa;
+
+        .subtitle {
+            color: #8fbda0;
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* STATUS */
+
+        .status {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
             margin-bottom: 30px;
+
+            font-size: 12px;
         }
 
-        .info {
+
+        .status-item {
+            border-left: 2px solid #1eff78;
+
+            padding-left: 10px;
+        }
+
+
+        .status-label {
+            color: #668a73;
+
+            display: block;
+
+            margin-bottom: 4px;
+        }
+
+
+        .status-value {
+            color: #1eff78;
+
+            font-weight: bold;
+        }
+
+
+        /* ALERTA */
+
+        .alert {
+            border: 1px solid #ff3355;
+
+            padding: 18px;
+
+            margin-bottom: 25px;
+
+            color: #ff667d;
+
+            background: rgba(255, 0, 50, 0.04);
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+
+        .alert-title {
+            color: #ff3355;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* TEXTO */
+
+        .message {
             line-height: 1.8;
+
+            font-size: 14px;
+
+            color: #c7e8d1;
+
             margin-bottom: 30px;
         }
+
+
+        .highlight {
+            color: #1eff78;
+
+            font-weight: bold;
+        }
+
+
+        /* PLAYER */
+
+        .audio-section {
+            border: 1px solid #205c38;
+
+            padding: 20px;
+
+            margin-bottom: 20px;
+
+            background: rgba(30, 255, 120, 0.025);
+        }
+
+
+        .section-title {
+            color: #1eff78;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
 
         audio {
             width: 100%;
+
+            height: 42px;
+
+            margin-bottom: 18px;
         }
 
-        .footer {
-            margin-top: 25px;
-            color: #666;
-            font-size: 12px;
+
+        /* BOTÃO DOWNLOAD */
+
+        .download-button {
+            display: block;
+
+            width: 100%;
+
+            text-align: center;
+
+            padding: 15px;
+
+            border: 1px solid #1eff78;
+
+            color: #1eff78;
+
+            text-decoration: none;
+
+            font-family: "Courier New", monospace;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            transition: all 0.2s ease;
+
+            background: rgba(30, 255, 120, 0.03);
         }
+
+
+        .download-button:hover {
+            background: #1eff78;
+
+            color: #050807;
+
+            box-shadow:
+                0 0 20px rgba(30, 255, 120, 0.5);
+        }
+
+
+        /* INSTRUÇÃO */
+
+        .instruction {
+            border-left: 3px solid #1eff78;
+
+            padding: 15px 18px;
+
+            margin-top: 25px;
+
+            background: rgba(30, 255, 120, 0.035);
+
+            line-height: 1.7;
+
+            font-size: 13px;
+        }
+
+
+        .instruction strong {
+            color: #1eff78;
+        }
+
+
+        /* FOOTER */
+
+        .footer {
+            margin-top: 30px;
+
+            padding-top: 18px;
+
+            border-top: 1px solid #163d26;
+
+            color: #4e745b;
+
+            font-size: 10px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* CELULAR */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 12px;
+            }
+
+            .container {
+                padding: 22px;
+
+            }
+
+            h1 {
+                font-size: 21px;
+
+                letter-spacing: 2px;
+            }
+
+            .subtitle {
+                font-size: 11px;
+            }
+
+            .status {
+                display: block;
+            }
+
+            .status-item {
+                margin-bottom: 12px;
+            }
+
+            .alert {
+                font-size: 13px;
+            }
+
+            .message {
+                font-size: 13px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <div class="terminal">
 
-        <h1>PROTOCOLO ÔMEGA</h1>
+<div class="container">
 
-        <div class="warning">
-            // TRANSMISSÃO 01 — RECEPÇÃO INSTÁVEL
+
+    <!-- CABEÇALHO -->
+
+    <div class="header">
+
+        <div class="classification">
+            // CLASSIFICAÇÃO: ÔMEGA
         </div>
 
-        <div class="info">
-            ORIGEM: DESCONHECIDA<br>
-            STATUS: CORROMPIDO<br>
-            DURAÇÃO: 00:37<br>
-            NÍVEL DE RUÍDO: 97%
-        </div>
+        <h1>
+            PROTOCOLO ÔMEGA
+        </h1>
 
-        <p>
-            "O que foi apagado da mensagem ainda ocupa espaço."
-        </p>
-
-        <br>
-
-        <audio controls>
-            <source src="transmissao_01_sinal_fantasma_v2.wav" type="audio/wav">
-            Seu navegador não suporta áudio.
-        </audio>
-
-        <div class="footer">
-            Ω—01 // GTHC // ARQUIVO RECUPERADO
+        <div class="subtitle">
+            TRANSMISSÃO // SINAL 01 // SINAL FANTASMA
         </div>
 
     </div>
+
+
+    <!-- STATUS -->
+
+    <div class="status">
+
+        <div class="status-item">
+
+            <span class="status-label">
+                STATUS DO ARQUIVO
+            </span>
+
+            <span class="status-value">
+                CORROMPIDO
+            </span>
+
+        </div>
+
+
+        <div class="status-item">
+
+            <span class="status-label">
+                ORIGEM
+            </span>
+
+            <span class="status-value">
+                DESCONHECIDA
+            </span>
+
+        </div>
+
+
+        <div class="status-item">
+
+            <span class="status-label">
+                INTEGRIDADE
+            </span>
+
+            <span class="status-value">
+                00.7%
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ALERTA -->
+
+    <div class="alert">
+
+        <div class="alert-title">
+            ⚠ TRANSMISSÃO INTERCEPTADA
+        </div>
+
+        Um sinal foi recuperado de uma fonte desconhecida.
+
+        <br>
+
+        O conteúdo aparente da transmissão não corresponde
+        ao seu conteúdo real.
+
+    </div>
+
+
+    <!-- MENSAGEM -->
+
+    <div class="message">
+
+        <span class="highlight">
+            [NEXUS]
+        </span>
+
+        conexão estabelecida...
+
+        <br><br>
+
+        O sinal foi parcialmente reconstruído.
+
+        <br>
+
+        A análise convencional não produziu resultados.
+
+        <br><br>
+
+        <span class="highlight">
+            AVISO:
+        </span>
+
+        O arquivo pode conter informações fora do domínio
+        audível.
+
+    </div>
+
+
+    <!-- ÁUDIO -->
+
+    <div class="audio-section">
+
+        <div class="section-title">
+            // ARQUIVO DE TRANSMISSÃO
+        </div>
+
+
+        <audio controls>
+
+            <source
+                src="biblioteca_03_spectrograma.wav"
+                type="audio/wav"
+            >
+
+            Seu navegador não suporta reprodução de áudio.
+
+        </audio>
+
+
+        <!-- DOWNLOAD -->
+
+        <a
+            class="download-button"
+            href="biblioteca_03_spectrograma.wav"
+            download="biblioteca_03_spectrograma.wav"
+        >
+            ⬇ BAIXAR ARQUIVO DE ÁUDIO
+        </a>
+
+
+    </div>
+
+
+    <!-- INSTRUÇÃO -->
+
+    <div class="instruction">
+
+        <strong>
+            [NOTA DO SISTEMA]
+        </strong>
+
+        <br><br>
+
+        Não escute apenas.
+
+        <br>
+
+        O conteúdo da transmissão pode estar oculto
+        em sua representação visual.
+
+        <br><br>
+
+        <strong>
+            Recomenda-se análise espectral.
+        </strong>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <span>
+            GTHC // NEXUS
+        </span>
+
+        <span>
+            SESSION: Ω-01
+        </span>
+
+        <span>
+            2087
+        </span>
+
+    </div>
+
+
+</div>
+
 
 </body>
 
