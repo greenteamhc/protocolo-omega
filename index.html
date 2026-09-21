@@ -1,128 +1,95 @@
-        </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#050807">
+<title>PROTOCOLO ÔMEGA // SINAL 01</title>
 
-        <h1>PROTOCOLO ÔMEGA</h1>
+<style>
+:root {
+    --bg: #050807;
+    --panel: #09100c;
+    --green: #1eff78;
+    --green-soft: #8fbda0;
+    --text: #d8ffe5;
+    --muted: #668a73;
+    --red: #ff3355;
+    --border: rgba(30,255,120,.38);
+}
 
-        <div class="subtitle">
-            TRANSMISSÃO // SINAL 01 // SINAL FANTASMA
-        </div>
-    </div>
+* { box-sizing: border-box; }
 
-    <div class="status">
+html { min-height: 100%; }
 
-        <div class="status-item">
-            <span class="status-label">STATUS DO ARQUIVO</span>
-            <span class="status-value">CORROMPIDO</span>
-        </div>
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 15%, rgba(30,255,120,.08), transparent 38%),
+        var(--bg);
+    color: var(--text);
+    font-family: "Courier New", monospace;
+    padding: 18px;
+    overflow-x: hidden;
+}
 
-        <div class="status-item">
-            <span class="status-label">ORIGEM</span>
-            <span class="status-value">DESCONHECIDA</span>
-        </div>
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 99;
+    opacity: .45;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(30,255,120,.025) 0,
+        rgba(30,255,120,.025) 1px,
+        transparent 1px,
+        transparent 4px
+    );
+}
 
-        <div class="status-item">
-            <span class="status-label">INTEGRIDADE</span>
-            <span class="status-value">00.7%</span>
-        </div>
+.page {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
 
-    </div>
+.terminal {
+    background: rgba(5,10,7,.96);
+    border: 1px solid var(--green);
+    box-shadow:
+        0 0 28px rgba(30,255,120,.12),
+        inset 0 0 35px rgba(30,255,120,.025);
+    padding: clamp(18px, 5vw, 36px);
+}
 
-    <div class="alert">
+.header {
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--border);
+}
 
-        <div class="alert-title">
-            ⚠ TRANSMISSÃO INTERCEPTADA
-        </div>
+.classification {
+    color: var(--red);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
 
-        Um sinal foi recuperado de uma fonte desconhecida.
+h1 {
+    color: var(--green);
+    font-size: clamp(22px, 6vw, 32px);
+    line-height: 1.15;
+    letter-spacing: clamp(1px, .7vw, 3px);
+    margin: 0 0 10px;
+    text-shadow: 0 0 10px rgba(30,255,120,.45);
+}
 
-        <br>
-
-        O conteúdo aparente da transmissão não corresponde
-        ao seu conteúdo real.
-
-    </div>
-
-    <div class="message">
-
-        <span class="highlight">[NEXUS]</span>
-        conexão estabelecida...
-
-        <br><br>
-
-        O sinal foi parcialmente reconstruído.
-
-        <br>
-
-        A análise convencional não produziu resultados.
-
-        <br><br>
-
-        <span class="highlight">AVISO:</span>
-
-        O arquivo pode conter informações fora do domínio
-        audível.
-
-    </div>
-
-    <!-- ÁUDIO -->
-    <div class="audio-section">
-
-        <div class="section-title">
-            // ARQUIVO DE TRANSMISSÃO
-        </div>
-
-        <!--
-            MP3 = reprodução no navegador.
-            WAV = arquivo que o jogador baixa para análise espectral.
-        -->
-        <audio controls preload="metadata">
-            <source
-                src="./transmissao_01_preview.mp3"
-                type="audio/mpeg"
-            >
-
-            Seu navegador não suporta reprodução de áudio.
-        </audio>
-
-        <a
-            class="download-button"
-            href="./transmissao_01.wav"
-            download="transmissao_01.wav"
-        >
-            ⬇ BAIXAR ARQUIVO DE ÁUDIO
-        </a>
-
-    </div>
-
-    <div class="instruction">
-
-        <strong>[NOTA DO SISTEMA]</strong>
-
-        <br><br>
-
-        Não escute apenas.
-
-        <br>
-
-        O conteúdo da transmissão pode estar oculto
-        em sua representação visual.
-
-        <br><br>
-
-        <strong>Recomenda-se análise espectral.</strong>
-
-    </div>
-
-    <div class="footer">
-
-        <span>GTHC // NEXUS</span>
-
-        <span>SESSION: Ω-01</span>
-
-        <span>2087</span>
-
-    </div>
-
-</div>
-
-</body>
-</html>
+.subtitle {
+    color: var(--green-soft);
+    font-size: clamp(10px, 2.7vw, 13px);
+    line-height: 1.5;
+    letter-spacing: .7px;
+}
