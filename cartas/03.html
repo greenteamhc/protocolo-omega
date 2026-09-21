@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#020604">
+<title>PROTOCOLO ÔMEGA // REGISTRO 03</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#020604;color:#d8e8df}
+body{
+  font-family:"Courier New",Courier,monospace;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(0,255,128,.07),transparent 35%),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0,rgba(255,255,255,.018) 1px,transparent 1px,transparent 4px),
+    #020604;
+  overflow-x:hidden;
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 0%,rgba(0,255,128,.018) 50%,transparent 100%);z-index:0}
+.wrap{position:relative;z-index:1;width:min(900px,calc(100% - 32px));margin:0 auto;padding:42px 0 50px}
+.header{border-bottom:1px solid rgba(55,255,151,.45);padding-bottom:22px;margin-bottom:24px}
+.system{color:#45ff9b;font-size:12px;letter-spacing:4px;margin-bottom:13px;text-shadow:0 0 10px rgba(69,255,155,.45)}
+h1{margin:0;color:#e6f5ed;font-size:clamp(28px,6vw,48px);font-weight:500;letter-spacing:3px;text-shadow:0 0 14px rgba(160,255,210,.2)}
+.dot{display:inline-block;width:13px;height:13px;border-radius:50%;background:#35ff91;box-shadow:0 0 16px #35ff91;margin:0 15px 4px 0}
+.section-label{color:#45ff9b;font-size:13px;letter-spacing:3px;margin:25px 0 12px}
+.panel{border:1px solid rgba(69,255,155,.28);background:rgba(0,20,10,.38);padding:20px 22px;margin:14px 0;box-shadow:inset 0 0 30px rgba(0,255,128,.025)}
+.status{display:grid;grid-template-columns:1fr 1fr;gap:12px 25px;font-size:15px;line-height:1.55}
+.status b{color:#f0fff7;font-weight:700}
+.success{border-color:rgba(69,255,155,.7);box-shadow:0 0 22px rgba(69,255,155,.08),inset 0 0 35px rgba(69,255,155,.035)}
+.success-title{color:#45ff9b;font-size:16px;letter-spacing:3px;margin-bottom:18px}
+.keybox{border:1px solid rgba(190,255,222,.38);background:rgba(0,0,0,.45);padding:20px;text-align:center;margin:18px 0}
+.key-label{font-size:11px;color:#45ff9b;letter-spacing:3px;margin-bottom:12px}
+.key{font-size:clamp(22px,6vw,34px);letter-spacing:3px;color:#eafff3;text-shadow:0 0 12px rgba(69,255,155,.32);word-break:break-word}
+.integrity{height:8px;border:1px solid rgba(69,255,155,.45);margin-top:16px;background:#06110b;overflow:hidden}
+.integrity span{display:block;width:14%;height:100%;background:#45ff9b;box-shadow:0 0 12px #45ff9b}
+.text{font-size:16px;line-height:1.75;color:#cbd9d2}
+.next{margin-top:22px;padding:18px;border-left:3px solid #45ff9b;background:rgba(69,255,155,.045)}
+.next strong{display:block;color:#45ff9b;letter-spacing:2px;font-size:13px;margin-bottom:12px}
+.next p{margin:0;color:#ecfff5;font-size:18px;line-height:1.6}
+.meta{margin-top:28px;color:#45ff9b;font-size:11px;letter-spacing:2px;line-height:1.8;opacity:.9}
+.footer{margin-top:32px;padding-top:18px;border-top:1px solid rgba(69,255,155,.18);color:#567267;font-size:10px;letter-spacing:2px;line-height:1.8}
+@media(max-width:600px){
+ .wrap{width:calc(100% - 28px);padding:28px 0 35px}
+ .system{font-size:10px;letter-spacing:3px}
+ h1{font-size:31px;letter-spacing:2px;line-height:1.15}
+ .dot{width:11px;height:11px;margin-right:10px}
+ .section-label{font-size:11px;letter-spacing:2px;margin-top:21px}
+ .panel{padding:17px 15px;margin:12px 0}
+ .status{grid-template-columns:1fr;gap:7px;font-size:14px}
+ .text{font-size:15px;line-height:1.65}
+ .success-title{font-size:13px;letter-spacing:2px}
+ .keybox{padding:18px 10px}
+ .key{font-size:24px;letter-spacing:2px}
+ .next p{font-size:16px;line-height:1.55}
+ .meta{font-size:9px}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="header">
+    <div class="system">GTHC // NEXUS</div>
+    <h1><span class="dot"></span>PROTOCOLO ÔMEGA</h1>
+  </header>
+
+  <div class="section-label">RECUPERAÇÃO // REGISTRO 03</div>
+
+  <section class="panel success">
+    <div class="success-title">◆ CHAVE LOCALIZADA</div>
+    <div class="status">
+      <div>REGISTRO: <b>Ω—03</b></div>
+      <div>STATUS: <b>AUTENTICADO</b></div>
+      <div>FRAGMENTO: <b>01</b></div>
+      <div>ORIGEM: <b>CONFIRMADA</b></div>
+    </div>
+
+    <div class="keybox">
+      <div class="key-label">CHAVE 01</div>
+      <div class="key">ECO—7K3M—19</div>
+    </div>
+
+    <div class="text">O primeiro fragmento foi recuperado. A integridade do arquivo foi parcialmente restaurada.</div>
+    <div class="integrity" aria-label="Integridade 14 por cento"><span></span></div>
+  </section>
+
+  <section class="panel">
+    <div class="section-label" style="margin-top:0">FRAGMENTO RESTAURADO</div>
+    <div class="text">A chave foi reconhecida pelo protocolo. Nenhuma ação adicional é necessária neste registro.</div>
+  </section>
+
+  <section class="next">
+    <strong>// PRÓXIMA INSTRUÇÃO</strong>
+    <p>O ARQUIVO FALA ANTES DE SER ABERTO.</p>
+  </section>
+
+  <div class="meta">GTHC // ARQUIVO ÔMEGA // SESSION: 01<br>INTEGRIDADE ATUAL: 14%</div>
+
+  <footer class="footer">PROTOCOLO ÔMEGA // NEXUS ONLINE<br>REGISTRO VALIDADO — NÃO COMPARTILHE SUA CHAVE</footer>
+</main>
+</body>
+</html>
