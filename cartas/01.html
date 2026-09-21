@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#07100b">
+<title>PROTOCOLO ÔMEGA — Registro 01</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;min-height:100%;background:#07100b}
+body{font-family:"Courier New",monospace;color:#e8fff1;-webkit-text-size-adjust:100%;}
+.page{width:100%;min-height:100vh;padding:22px 12px 28px;background:linear-gradient(180deg,#07100b 0%,#030705 100%);position:relative;overflow:hidden}
+.page:before{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(57,255,136,.025) 0px,rgba(57,255,136,.025) 1px,transparent 1px,transparent 4px);opacity:.55}
+.container{width:100%;max-width:850px;margin:0 auto;position:relative;z-index:2}
+.topline{height:2px;background:#39ff88;box-shadow:0 0 12px #39ff88;margin-bottom:25px}
+.header{display:flex;align-items:center;gap:12px;padding-bottom:18px;border-bottom:1px solid rgba(57,255,136,.3)}
+.dot{width:9px;height:9px;min-width:9px;border-radius:50%;background:#39ff88;box-shadow:0 0 12px #39ff88}
+.small{margin:0 0 6px;color:#39ff88;font-size:10px;letter-spacing:2px}
+h1{margin:0;color:#f0fff6;font-size:28px;line-height:1.1;letter-spacing:1px}
+.classification{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:13px 0;color:#789383;font-size:10px;letter-spacing:1px}
+.purple{color:#bd78ff}
+.box{margin-top:10px;padding:16px;border:1px solid rgba(57,255,136,.25);background:#0b1510}
+.label{margin:0 0 13px;color:#39ff88;font-size:10px;letter-spacing:1.5px}
+.status{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.status span{display:block;color:#718878;font-size:9px;margin-bottom:5px;letter-spacing:1px}
+.status strong{display:block;color:#b9ffd1;font-size:12px;font-weight:normal}
+.alert{display:flex;gap:12px;border-color:rgba(255,204,85,.35)}
+.alert-icon{color:#ffcc55;font-size:22px;line-height:1}
+.alert strong{color:#ffcc55;font-size:11px;letter-spacing:1px}
+p{margin:6px 0 0;color:#b8c9be;font-size:13px;line-height:1.55}
+.highlight{color:#9affc1!important}
+.false{border-color:rgba(189,120,255,.35)}
+.result{margin-top:14px;padding:15px;border:1px solid rgba(189,120,255,.25);background:#080b09;text-align:center}
+.result .big{display:block;color:#bd78ff;font-size:18px;letter-spacing:2px;margin-bottom:8px}
+.result .smallcode{display:block;color:#718878;font-size:9px;letter-spacing:1.2px}
+.code{margin-top:14px!important;padding:11px;border-left:2px solid #39ff88;background:rgba(57,255,136,.04);color:#9affc1!important;font-size:10px!important;overflow-wrap:anywhere}
+footer{display:flex;justify-content:space-between;gap:10px;margin-top:20px;padding-top:14px;border-top:1px solid rgba(57,255,136,.2);color:#52665a;font-size:8px;letter-spacing:.7px}
+@media(max-width:600px){.page{padding:16px 10px 24px}.topline{margin-bottom:20px}.header{gap:9px;padding-bottom:15px}h1{font-size:23px}.small{font-size:9px;letter-spacing:1.2px}.classification{font-size:8px;padding:11px 0}.box{padding:13px;margin-top:8px}.status{grid-template-columns:1fr;gap:11px}.status strong{font-size:11px}.alert{padding:13px}.alert-icon{font-size:19px}p{font-size:12px}.result{padding:14px}.result .big{font-size:16px}.code{font-size:9px!important}footer{flex-direction:column;gap:4px}}
+</style>
+</head>
+<body>
+<div class="page">
+<main class="container">
+<div class="topline"></div>
+<header class="header">
+<div class="dot"></div>
+<div><p class="small">GTHC // NEXUS</p><h1>PROTOCOLO ÔMEGA</h1></div>
+</header>
+<section class="classification"><span>RECUPERAÇÃO // REGISTRO 01</span><span class="purple">FRAGMENTO INCOMPATÍVEL</span></section>
+
+<section class="box">
+<div class="label">STATUS DO REGISTRO</div>
+<div class="status">
+<div><span>REGISTRO</span><strong>Ω — 01</strong></div>
+<div><span>ESTADO</span><strong>◈ LOCALIZADO</strong></div>
+<div><span>CHAVE</span><strong>NÃO ENCONTRADA</strong></div>
+</div>
+</section>
+
+<section class="box alert">
+<div class="alert-icon">⚠</div>
+<div><strong>FRAGMENTO INCOMPATÍVEL</strong><p>Você encontrou um registro válido do protocolo.</p><p class="highlight">Mas não é este.</p></div>
+</section>
+
+<section class="box false">
+<div class="label">// REGISTRO RECUPERADO</div>
+<div class="result">
+<span class="big">SEQUÊNCIA PRESERVADA</span>
+<span class="smallcode">REGISTRO 01 / 04</span>
+</div>
+<p>O sistema reconhece este ponto como parte do Arquivo Ômega.</p>
+<p>Entretanto, nenhuma chave de recuperação foi associada a este registro.</p>
+</section>
+
+<section class="box">
+<div class="label">// INSTRUÇÃO</div>
+<p>A transmissão indicou um registro específico.</p>
+<p>Se este não corresponde à informação recebida, continue a busca.</p>
+<p class="code">[ REGISTRO 01 ] → [ NÃO AUTORIZADO ] → [ CONTINUAR BUSCA ]</p>
+</section>
+
+<footer><span>GTHC // ARQUIVO ÔMEGA</span><span>SESSION: 01</span></footer>
+</main>
+</div>
+</body>
+</html>
