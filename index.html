@@ -1,82 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#050807">
-  <title>PROTOCOLO ÔMEGA — Sinal Fantasma</title>
-  <link rel="stylesheet" href="./style.css?v=20260921">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#07100b">
+<title>PROTOCOLO ÔMEGA — Sinal Fantasma</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;min-height:100%;background:#07100b}
+body{font-family:"Courier New",monospace;color:#e8fff1;-webkit-text-size-adjust:100%;}
+.page{width:100%;min-height:100vh;padding:22px 12px 28px;background:linear-gradient(180deg,#07100b 0%,#030705 100%)}
+.container{width:100%;max-width:850px;margin:0 auto;position:relative;z-index:2}
+.topline{height:2px;background:#39ff88;box-shadow:0 0 12px #39ff88;margin-bottom:25px}
+.header{display:flex;align-items:center;gap:12px;padding-bottom:18px;border-bottom:1px solid rgba(57,255,136,.3)}
+.dot{width:9px;height:9px;min-width:9px;border-radius:50%;background:#39ff88;box-shadow:0 0 12px #39ff88}
+.small{margin:0 0 6px;color:#39ff88;font-size:10px;letter-spacing:2px}
+h1{margin:0;color:#f0fff6;font-size:28px;line-height:1.1;letter-spacing:1px}
+.classification{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:13px 0;color:#789383;font-size:10px;letter-spacing:1px}
+.purple{color:#bd78ff}
+.box{margin-top:10px;padding:16px;border:1px solid rgba(57,255,136,.25);background:#0b1510}
+.label{margin:0 0 13px;color:#39ff88;font-size:10px;letter-spacing:1.5px}
+.status{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.status span{display:block;color:#718878;font-size:9px;margin-bottom:5px;letter-spacing:1px}
+.status strong{display:block;color:#b9ffd1;font-size:12px;font-weight:normal}
+.warning{display:flex;gap:12px;border-color:rgba(255,204,85,.35)}
+.warning-icon{color:#ffcc55;font-size:22px;line-height:1}
+.warning strong{color:#ffcc55;font-size:11px;letter-spacing:1px}
+p{margin:6px 0 0;color:#b8c9be;font-size:13px;line-height:1.55}
+.highlight{color:#9affc1!important}
+.transmission{border-color:rgba(189,120,255,.35)}
+.player{padding:10px;background:#020402;border:1px solid rgba(189,120,255,.2)}
+audio{display:block;width:100%;height:42px}
+.download{display:block;margin-top:10px;padding:13px 10px;border:1px solid rgba(57,255,136,.3);color:#9affc1;text-decoration:none;text-align:center;font-size:10px;letter-spacing:.6px}
+.download:active{background:rgba(57,255,136,.1)}
+.code{margin-top:14px!important;padding:11px;border-left:2px solid #39ff88;background:rgba(57,255,136,.04);color:#9affc1!important;font-size:10px!important;overflow-wrap:anywhere}
+footer{display:flex;justify-content:space-between;gap:10px;margin-top:20px;padding-top:14px;border-top:1px solid rgba(57,255,136,.2);color:#52665a;font-size:8px;letter-spacing:.7px}
+@media(max-width:600px){.page{padding:16px 10px 24px}.topline{margin-bottom:20px}.header{gap:9px;padding-bottom:15px}h1{font-size:23px}.small{font-size:9px;letter-spacing:1.2px}.classification{font-size:8px;padding:11px 0}.box{padding:13px;margin-top:8px}.status{grid-template-columns:1fr;gap:11px}.status strong{font-size:11px}.warning{padding:13px}.warning-icon{font-size:19px}p{font-size:12px}.download{font-size:9px;padding:12px 6px}footer{flex-direction:column;gap:4px}}
+</style>
 </head>
 <body>
-  <main class="terminal">
-    <div class="scanlines"></div>
-
-    <header class="header">
-      <div class="status-dot"></div>
-      <div>
-        <p class="system-label">GTHC // NEXUS</p>
-        <h1>PROTOCOLO ÔMEGA</h1>
-      </div>
-    </header>
-
-    <section class="classification">
-      <span>TRANSMISSÃO // SINAL 01</span>
-      <span class="classification-tag">SINAL FANTASMA</span>
-    </section>
-
-    <section class="panel">
-      <div class="panel-title">STATUS DO ARQUIVO</div>
-      <div class="status-grid">
-        <div>
-          <span>ESTADO</span>
-          <strong>◈ CORROMPIDO</strong>
-        </div>
-        <div>
-          <span>ORIGEM</span>
-          <strong>DESCONHECIDA</strong>
-        </div>
-        <div>
-          <span>INTEGRIDADE</span>
-          <strong>00.7%</strong>
-        </div>
-      </div>
-    </section>
-
-    <section class="warning">
-      <div class="warning-icon">⚠</div>
-      <div>
-        <strong>ATENÇÃO</strong>
-        <p>O arquivo contém uma transmissão não identificada.</p>
-        <p class="highlight">Não escute apenas; observe o som.</p>
-      </div>
-    </section>
-
-    <section class="transmission">
-      <div class="section-label">// TRANSMISSÃO RECUPERADA</div>
-
-      <div class="player-box">
-        <audio controls preload="metadata">
-          <source src="./transmissao_01_preview.mp3" type="audio/mpeg">
-          Seu navegador não suporta reprodução de áudio.
-        </audio>
-      </div>
-
-      <a class="download" href="./transmissao_01.wav" download>
-        <span>↓</span> BAIXAR ARQUIVO ORIGINAL (.WAV)
-      </a>
-    </section>
-
-    <section class="instruction">
-      <div class="section-label">// INSTRUÇÃO</div>
-      <p>O sinal foi preservado em sua forma original.</p>
-      <p>Use um visualizador de espectrograma para analisar a transmissão.</p>
-      <p class="code">[ AUDIO INPUT ] → [ SPECTROGRAM ] → [ INFORMATION ]</p>
-    </section>
-
-    <footer>
-      <span>GTHC // ARQUIVO ÔMEGA</span>
-      <span>SESSION: 01</span>
-    </footer>
-  </main>
+<div class="page">
+<main class="container">
+<div class="topline"></div>
+<header class="header">
+<div class="dot"></div>
+<div><p class="small">GTHC // NEXUS</p><h1>PROTOCOLO ÔMEGA</h1></div>
+</header>
+<section class="classification"><span>TRANSMISSÃO // SINAL 01</span><span class="purple">SINAL FANTASMA</span></section>
+<section class="box">
+<div class="label">STATUS DO ARQUIVO</div>
+<div class="status">
+<div><span>ESTADO</span><strong>◈ CORROMPIDO</strong></div>
+<div><span>ORIGEM</span><strong>DESCONHECIDA</strong></div>
+<div><span>INTEGRIDADE</span><strong>00.7%</strong></div>
+</div>
+</section>
+<section class="box warning">
+<div class="warning-icon">⚠</div>
+<div><strong>ATENÇÃO</strong><p>O arquivo contém uma transmissão não identificada.</p><p class="highlight">Não escute apenas; observe o som.</p></div>
+</section>
+<section class="box transmission">
+<div class="label">// TRANSMISSÃO RECUPERADA</div>
+<div class="player"><audio controls preload="metadata"><source src="./transmissao_01_preview.mp3" type="audio/mpeg">Seu navegador não suporta reprodução de áudio.</audio></div>
+<a class="download" href="./transmissao_01.wav" download>↓ &nbsp; BAIXAR ARQUIVO ORIGINAL (.WAV)</a>
+</section>
+<section class="box">
+<div class="label">// INSTRUÇÃO</div>
+<p>O sinal foi preservado em sua forma original.</p>
+<p>Use um visualizador de espectrograma para analisar a transmissão.</p>
+<p class="code">[ AUDIO INPUT ] → [ SPECTROGRAM ] → [ INFORMATION ]</p>
+</section>
+<footer><span>GTHC // ARQUIVO ÔMEGA</span><span>SESSION: 01</span></footer>
+</main>
+</div>
 </body>
 </html>
