@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#050807">
+<title>PROTOCOLO ÔMEGA // REGISTRO 04</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;min-height:100%;background:#050807;color:#dceee5}
+body{font-family:"Courier New",monospace;overflow-x:hidden;background:radial-gradient(circle at 50% 0%,rgba(0,255,130,.08),transparent 38%),#050807}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background:repeating-linear-gradient(to bottom,transparent 0,transparent 3px,rgba(120,255,180,.12) 4px)}
+.container{width:min(920px,calc(100% - 32px));margin:0 auto;padding:44px 0 50px}
+.top{color:#52ff9a;font-size:13px;letter-spacing:5px;margin-bottom:18px;text-shadow:0 0 10px rgba(82,255,154,.5)}
+h1{font-size:clamp(30px,6vw,52px);font-weight:400;letter-spacing:2px;margin:0 0 28px;color:#e7fff2;text-shadow:0 0 12px rgba(130,255,190,.25)}
+.line{height:1px;background:linear-gradient(90deg,#36e88a,rgba(54,232,138,.15),transparent);margin-bottom:24px}
+.section-label{color:#52ff9a;letter-spacing:3px;font-size:14px;margin-bottom:18px}
+.panel{border:1px solid rgba(82,255,154,.5);background:rgba(8,18,14,.72);padding:24px;margin:18px 0;box-shadow:0 0 25px rgba(0,255,130,.05),inset 0 0 20px rgba(0,255,130,.025)}
+.row{display:flex;justify-content:space-between;gap:20px;padding:9px 0;border-bottom:1px solid rgba(130,255,190,.12);font-size:15px}
+.row:last-child{border-bottom:0}.label{color:#8bbca4}.value{color:#e8fff2;text-align:right;font-weight:bold}
+.alert{border:1px solid rgba(170,80,255,.6);background:rgba(95,35,130,.08);padding:24px;margin:24px 0}.alert-title{color:#c98cff;letter-spacing:3px;font-weight:bold;margin-bottom:18px;font-size:15px}
+.status{font-size:clamp(24px,7vw,38px);letter-spacing:3px;color:#ffcf70;margin:12px 0;text-shadow:0 0 12px rgba(255,207,112,.2)}
+.big{font-size:clamp(22px,6vw,34px);color:#8affbb;letter-spacing:2px;margin:12px 0}
+p{font-size:16px;line-height:1.75;margin:14px 0;color:#cde1d6}
+.instruction{border-left:3px solid #52ff9a;padding:4px 0 4px 18px;margin-top:28px}.instruction strong{color:#f0fff6}
+.footer{margin-top:34px;color:#4e9f76;font-size:12px;letter-spacing:2px;line-height:1.8}
+@media(max-width:600px){.container{width:calc(100% - 30px);padding:30px 0 36px}.top{font-size:11px;letter-spacing:3px;margin-bottom:13px}h1{font-size:31px;line-height:1.15;letter-spacing:1px;margin-bottom:22px}.section-label{font-size:12px;letter-spacing:2px}.panel{padding:18px 16px;margin:16px 0}.row{font-size:13px;gap:10px;align-items:flex-start}.label{max-width:52%}.value{max-width:48%;word-break:break-word}.alert{padding:18px 16px;margin:18px 0}.status{font-size:25px;line-height:1.25}.big{font-size:24px}p{font-size:15px;line-height:1.65}.instruction{padding-left:14px}.footer{font-size:10px}}
+</style>
+</head>
+<body>
+<main class="container">
+  <div class="top">GTHC // NEXUS</div>
+  <h1>PROTOCOLO ÔMEGA</h1>
+  <div class="line"></div>
+
+  <div class="section-label">RECUPERAÇÃO // REGISTRO 04</div>
+
+  <section class="panel">
+    <div class="row"><span class="label">ESTADO</span><span class="value">INCOMPATÍVEL</span></div>
+    <div class="row"><span class="label">ORIGEM</span><span class="value">NÃO CONFIRMADA</span></div>
+    <div class="row"><span class="label">REGISTRO</span><span class="value">Ω—04</span></div>
+    <div class="row"><span class="label">CHAVE ASSOCIADA</span><span class="value">NENHUMA</span></div>
+  </section>
+
+  <section class="alert">
+    <div class="alert-title">⚠ ALERTA // AUTENTICAÇÃO</div>
+    <div class="status">CHAVE NÃO ENCONTRADA</div>
+    <p>Este registro pertence ao protocolo, mas não corresponde à sessão de recuperação solicitada.</p>
+  </section>
+
+  <section class="panel">
+    <div class="section-label">RESULTADO DA CONSULTA</div>
+    <p>O NEXUS reconhece o registro <strong>Ω—04</strong>, porém nenhum fragmento de chave foi associado a esta posição.</p>
+    <p>O arquivo permanece incompleto.</p>
+  </section>
+
+  <div class="instruction">
+    <div class="section-label">// INSTRUÇÃO</div>
+    <p><strong>A sequência continua.</strong></p>
+    <p>O registro correto deve corresponder à transmissão recebida.</p>
+  </div>
+
+  <div class="footer">GTHC // ARQUIVO ÔMEGA // SESSION: 01<br>STATUS: AGUARDANDO RECUPERAÇÃO</div>
+</main>
+</body>
+</html>
