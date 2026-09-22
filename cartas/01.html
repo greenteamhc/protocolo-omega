@@ -7,7 +7,9 @@
 <title>PROTOCOLO ÔMEGA — Registro 01</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box
+}
 
 html,body{
     margin:0;
@@ -26,7 +28,11 @@ body{
     width:100%;
     min-height:100vh;
     padding:22px 12px 28px;
-    background:linear-gradient(180deg,#07100b 0%,#030705 100%);
+    background:linear-gradient(
+        180deg,
+        #07100b 0%,
+        #030705 100%
+    );
     position:relative;
     overflow:hidden
 }
@@ -220,7 +226,8 @@ p{
     color:#bd78ff;
     font-size:21px;
     letter-spacing:3px;
-    font-weight:bold
+    font-weight:bold;
+    overflow-wrap:anywhere
 }
 
 .rejected{
@@ -321,8 +328,8 @@ footer{
     }
 
     .key-value{
-        font-size:19px;
-        letter-spacing:2px
+        font-size:18px;
+        letter-spacing:1.5px
     }
 
     .code{
@@ -345,25 +352,40 @@ footer{
 
 <div class="topline"></div>
 
+
 <header class="header">
+
     <div class="dot"></div>
 
     <div>
         <p class="small">GTHC // NEXUS</p>
-        <h1>PROTOCOLO ÔMEGA</h1>
+
+        <h1>
+            PROTOCOLO ÔMEGA
+        </h1>
     </div>
+
 </header>
 
 
 <section class="classification">
-    <span>RECUPERAÇÃO // REGISTRO 01</span>
-    <span class="purple">FRAGMENTO INCOMPATÍVEL</span>
+
+    <span>
+        CHAVE 01 // SINAL FANTASMA
+    </span>
+
+    <span class="purple">
+        FRAGMENTO INCOMPATÍVEL
+    </span>
+
 </section>
 
 
 <section class="box">
 
-    <div class="label">STATUS DO REGISTRO</div>
+    <div class="label">
+        STATUS DO REGISTRO
+    </div>
 
     <div class="status">
 
@@ -389,11 +411,15 @@ footer{
 
 <section class="box alert">
 
-    <div class="alert-icon">⚠</div>
+    <div class="alert-icon">
+        ⚠
+    </div>
 
     <div>
 
-        <strong>FRAGMENTO INCOMPATÍVEL</strong>
+        <strong>
+            FRAGMENTO INCOMPATÍVEL
+        </strong>
 
         <p>
             Você encontrou um registro válido do protocolo.
@@ -410,16 +436,19 @@ footer{
 
 <section class="box false">
 
-    <div class="label">// CHAVE RECUPERADA</div>
+    <div class="label">
+        // CHAVE RECUPERADA
+    </div>
+
 
     <div class="key">
 
         <span class="key-label">
-            CHAVE IDENTIFICADA
+            CHAVE 01 // SINAL FANTASMA
         </span>
 
         <span class="key-value">
-            ARQUIVO
+            ECO—7K3M—19
         </span>
 
         <span class="rejected">
@@ -428,13 +457,15 @@ footer{
 
     </div>
 
+
     <p>
         O NEXUS reconhece a estrutura da chave,
         mas a assinatura não corresponde ao registro solicitado.
     </p>
 
     <p>
-        O fragmento permanece incompatível.
+        A credencial pertence ao Sinal Fantasma,
+        porém sua validação foi rejeitada.
     </p>
 
 </section>
@@ -442,11 +473,13 @@ footer{
 
 <section class="box">
 
-    <div class="label">// INSTRUÇÃO</div>
+    <div class="label">
+        // INSTRUÇÃO
+    </div>
 
     <p>
-        O registro foi preservado, mas a chave correta
-        permanece fora desta sessão.
+        O registro foi preservado,
+        mas a chave correta permanece fora desta sessão.
     </p>
 
     <p>
@@ -454,7 +487,7 @@ footer{
     </p>
 
     <p class="code">
-        [ Ω—01 ] → [ CHAVE REJEITADA ] → [ CONTINUAR BUSCA ]
+        [ Ω—01 ] → [ ECO—7K3M—19 ] → [ VALIDAÇÃO NEGADA ]
     </p>
 
 </section>
@@ -462,11 +495,16 @@ footer{
 
 <footer>
 
-    <span>GTHC // ARQUIVO ÔMEGA</span>
+    <span>
+        GTHC // ARQUIVO ÔMEGA
+    </span>
 
-    <span>SESSION: 01</span>
+    <span>
+        SESSION: 01
+    </span>
 
 </footer>
+
 
 </main>
 
